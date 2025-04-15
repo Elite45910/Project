@@ -1,0 +1,108 @@
+.recipeEdit {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .editTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  .backLink {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+    
+  .backLink:hover {
+    color: #1d6fa5;
+    transform: translateX(-3px);
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .input{
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  .inputArea{
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    min-height: 120px;
+  }
+  .saveBtn {
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.85rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    margin-top: 2rem;
+    box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
+  }
+  
+  .saveBtn:hover {
+    background-color: #27ae60;
+    transform: scale(1.02);
+  }
+  
+  .imagePreview {
+    width: 100%;
+    max-width: 550px;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin: 1.5rem auto 0 auto;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #555;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+ 
+  
+  @media (max-width: 768px) {
+    .recipeEdit {
+      padding: 1.5rem;
+    }
+  
+    .editTitle {
+      font-size: 2rem;
+    }
+  
+    .saveBtn {
+      font-size: 1rem;
+    }
+  }
+  

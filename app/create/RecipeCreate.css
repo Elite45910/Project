@@ -1,0 +1,166 @@
+/* RecipeCreate.module.css */
+
+/* General layout */
+.recipe-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 1rem;
+  color: #555;
+}
+
+input,
+textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button {
+  padding: 0.5rem 1.25rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* Placeholder image style */
+.placeholder-image {
+  width: 100%;
+  max-width: 550px;  /* ลดขนาดสูงสุดของกรอบให้เล็กลง */
+  max-height: 500px; /* ลดความสูงสูงสุดของกรอบ */
+  height: auto;
+  background-color: #eee;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+  margin: 0 auto; /* จัดให้อยู่กลาง */
+  overflow: hidden; /* ซ่อนส่วนเกิน */
+}
+
+/* การแสดงผลรูปภาพ */
+.recipe-image {
+  width: 100%;
+  height: 100%;
+  max-width: 550px;  /* ขนาดสูงสุดของรูปภาพ */
+  max-height: 500px; /* ความสูงสูงสุดของรูปภาพ */
+  object-fit: contain; /* ทำให้รูปภาพเต็มกรอบโดยไม่ตัด */
+  border-radius: 10px; /* ให้มุมกรอบโค้ง */
+  margin: 0 auto; /* จัดให้อยู่กลาง */
+}
+
+
+.section-title {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: #333;
+  text-decoration: underline;
+}
+
+.ingredient-item,
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ingredient-item input,
+.step-item input {
+  width: 238%;
+}
+
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  padding: 0.3rem 0.75rem;
+  margin: 1%;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.add-btn {
+  align-self: flex-start;
+  margin-top: 1rem;
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem 1.25rem;
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  background-color: #28a745;
+  width: 100%;
+}
+
+.back-btn {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #ccc;
+  color: #333;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    gap: 1rem;
+  }
+
+  .ingredient-item input,
+  .step-item input {
+    width: 100%;
+  }
+
+  .delete-btn,
+  .add-btn,
+  .submit-btn,
+  .back-btn {
+    width: 100%;
+  }
+}

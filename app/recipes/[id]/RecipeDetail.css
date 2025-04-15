@@ -1,0 +1,122 @@
+/* RecipeDetail.css */
+
+/* พื้นหลังและเลย์เอาท์หลัก */
+.recipe-detail {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #fffdf5, #f0f0f5);
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* ชื่อเมนู */
+  .recipe-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  /* คำอธิบาย */
+  .recipe-description {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  /* หัวข้อย่อย */
+  .recipe-subheading {
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #28a745;
+    padding-left: 1rem;
+  }
+  
+  /* รายการส่วนผสมและขั้นตอน */
+  .ingredients-list,
+  .steps-list {
+    list-style-type: none;
+    padding-left: 1rem;
+  }
+  
+  .ingredients-list li,
+  .steps-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  
+  .ingredients-list li::before,
+  .steps-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-size: 1.2rem;
+  }
+  
+  /* รูปภาพ */
+  .recipe-image {
+    width: 100%;
+    max-width: 550px;
+    max-height: 450px;
+    height: auto;
+    background-color: #fafafa;
+    border-radius: 12px;
+    margin: 0 auto 2rem;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* ลิงก์กลับ */
+  .link-back {
+    color: #3498db;
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link-back:hover {
+    color: #1d6fa5;
+    text-decoration: underline;
+  }
+  
+  /* ลิงก์แก้ไข */
+  .link-edit {
+    color: #e67e22;
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .link-edit:hover {
+    color: #ca6f1e;
+    text-decoration: underline;
+  }
+  
+  /* ข้อความโหลด/ผิดพลาด */
+  .loading-text,
+  .error-text {
+    font-size: 1.3rem;
+    color: #555;
+    padding: 2rem;
+    text-align: center;
+  }
+  
