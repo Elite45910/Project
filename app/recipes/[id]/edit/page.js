@@ -57,7 +57,7 @@ export default function RecipeEdit() {
     <main className={styles.recipeEdit}>
       <Link className={styles.backLink} href={`/recipes/${id}`}>← กลับ</Link>
       <h1 className={styles.editTitle}>🛠 แก้ไขเมนู</h1>
-
+       {/* ชื่อเมนู rename */}
       <div className={styles.formGroup}>
         <label>ชื่อเมนู</label>
         <input className={styles.input}
@@ -66,7 +66,7 @@ export default function RecipeEdit() {
           onChange={(e) => setRecipe({ ...recipe, title: e.target.value })}
         />
       </div>
-
+      {/* คำอธิบาย redescription */}
       <div className={styles.formGroup}>
         <label>คำอธิบาย</label>
         <textarea className={styles.inputArea}
@@ -74,7 +74,7 @@ export default function RecipeEdit() {
           onChange={(e) => setRecipe({ ...recipe, description: e.target.value })}
         />
       </div>
-
+      {/* re รูปภาพ */}
       <div className={styles.formGroup}>
         <label>URL รูปภาพ</label>
         <input className={styles.input}
@@ -91,7 +91,7 @@ export default function RecipeEdit() {
           />
         )}
       </div>
-
+        {/* บันทึกการแก้ไข */}
       <button className={styles.saveBtn} onClick={handleSubmit}>
         💾 บันทึกการแก้ไข
       </button>

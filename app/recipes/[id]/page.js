@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import './RecipeDetail.css'; // อย่าลืม import CSS ด้วย
+import styles from './RecipeDetail.css'; 
 
 export default function RecipeDetail() {
   const { id } = useParams();
@@ -41,11 +41,14 @@ export default function RecipeDetail() {
   if (!recipe) return <p className="error-text">❌ ไม่พบเมนูที่คุณค้นหา</p>;
 
   return (
+    
     <main className="recipe-detail">
+      {/* ปุ่ม  กลับ */}
       <Link href="/" className="link-back">← กลับ</Link>
-
+      
       <h1 className="recipe-title">{recipe.title}</h1>
-
+      
+      {/* รูป */}
       {recipe.image && (
         <img
           src={recipe.image}
@@ -54,15 +57,14 @@ export default function RecipeDetail() {
         />
       )}
 
+       
       <h3 className="recipe-description">{recipe.description}</h3>
-
       <h4 className="recipe-subheading">ส่วนผสม</h4>
       <ul className="ingredients-list">
         {ingredients.map((ing, index) => (
           <li key={index}>{ing.name} {ing.quantity}</li>
         ))}
       </ul>
-
       <h4 className="recipe-subheading">ขั้นตอนการทำ</h4>
       <ul className="steps-list">
         {steps.map((st, ind) => (
@@ -71,7 +73,7 @@ export default function RecipeDetail() {
           </li>
         ))}
       </ul>
-
+       {/* ปุ่มแก้ไขรูปกับชื่อ */}
       <Link href={`/recipes/${id}/edit`} className="link-edit">
         ✏️ แก้ไขรูปกับชื่อ
       </Link>

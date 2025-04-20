@@ -106,7 +106,7 @@ export default function RecipeCreate() {
       <h1 className="form-title">🍴สร้างเมนูใหม่🍴</h1>
 
       {error && <p className="error">{error}</p>}
-
+      {/*  ชื่อเมนู */}
       <form onSubmit={handleSubmit} className="form-container">
         <div className="form-group">
           <label>ชื่อเมนู</label>
@@ -118,7 +118,7 @@ export default function RecipeCreate() {
             placeholder="กรุณากรอกชื่อเมนู"
           />
         </div>
-
+      {/*  คำอธิบาย */}
         <div className="form-group">
           <label>คำอธิบาย</label>
           <textarea
@@ -128,7 +128,7 @@ export default function RecipeCreate() {
             placeholder="กรุณากรอกคำอธิบาย"
           />
         </div>
-
+      {/*  รูป */}
         <div className="form-group">
           <label>ลิงค์ภาพ (URL)</label>
           <input
@@ -138,7 +138,7 @@ export default function RecipeCreate() {
             placeholder="กรุณากรอกลิงค์ภาพ"
           />
         </div>
-
+      {/*  ทำให้รูปเต็มกรอบ */}
         <div className="form-group">
           {imageLoading ? (
             <div className="placeholder-image"></div>
@@ -146,7 +146,7 @@ export default function RecipeCreate() {
             <img src={image} alt="Recipe" className="recipe-image" />
           )}
         </div>
-
+        {/*  ส่วนผสม */}
         <h3 className="section-title">ส่วนผสม</h3>
         {ingredients.map((ingredient, index) => (
           <div key={index} className="ingredient-item">
@@ -157,6 +157,7 @@ export default function RecipeCreate() {
               placeholder="ชื่อส่วนผสม"
               required
             />
+            {/*  ปริมาณ */}
             <input
               type="text"
               value={ingredient.quantity}
@@ -164,6 +165,8 @@ export default function RecipeCreate() {
               placeholder="ปริมาณ"
               required
             />
+
+            {/*  ปุ่มลบ */}
             <button
               type="button"
               onClick={() => handleDeleteIngredient(index)}
@@ -174,10 +177,12 @@ export default function RecipeCreate() {
             </button>
           </div>
         ))}
+
+        {/*  เพิ่มส่วนผสม */}
         <button type="button" onClick={handleAddIngredient} className="add-btn">
         ➕เพิ่มส่วนผสม
         </button>
-    
+        {/*  ขั้นตอนการทำ */}
         <h3 className="section-title">ขั้นตอนการทำ</h3>
         {steps.map((step, index) => (
           <div key={index} className="step-item">
@@ -191,6 +196,7 @@ export default function RecipeCreate() {
                 required
                 className="step-input"
               />
+               {/*  ขั้นลบ */}
               <button
                 type="button"
                 onClick={() => handleDeleteStep(index)}
@@ -202,6 +208,7 @@ export default function RecipeCreate() {
             </div>
           </div>
         ))}
+        {/*  เพิ่มส่วนผสม */}
         <button type="button" onClick={handleAddStep} className="add-btn">
         ➕เพิ่มขั้นตอน
         </button>
@@ -209,7 +216,7 @@ export default function RecipeCreate() {
         <button type="submit" disabled={loading} className="submit-btn">
           {loading ? 'กำลังบันทึก...' : '🥢สร้างเมนู'}
         </button>
-        
+        {/*  ย้อนกลับ */}
         <button
           type="button"
           onClick={() => router.back()}

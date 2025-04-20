@@ -54,25 +54,18 @@ export default function HomePage() {
     setShowOnlyBookmarks(!showOnlyBookmarks);
   }
 
-  const filteredRecipes = recipes
-    .filter((recipe) => {
-      const matchSearch = recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchBookmark = !showOnlyBookmarks || bookmarked.includes(recipe.id);
-      return matchSearch && matchBookmark;
-    })
-    .sort((a, b) => {
-      const aBookmarked = bookmarked.includes(a.id);
-      const bBookmarked = bookmarked.includes(b.id);
-      if (aBookmarked === bBookmarked) return 0;
-      return aBookmarked ? -1 : 1;
-    });
+  const filteredRecipes = recipes.filter((recipe) => {
+    const matchSearch = recipe.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchBookmark = !showOnlyBookmarks || bookmarked.includes(recipe.id);
+    return matchSearch && matchBookmark;
+  });
 
   return (
     <div className={styles['background-container']}>
       <main className={styles['page-container']}>
         <h1 className={styles['page-title']}>🍽️ รายการเมนู</h1>
 
-        {/* ช่องค้นหา */}
+        {/* ปุ่ม ค้นหา*/}
         <input
           type="text"
           placeholder="🔍 ค้นหาเมนู..."
@@ -81,7 +74,7 @@ export default function HomePage() {
           className={styles['search-input']}
         />
 
-        {/* ปุ่ม toggle แสดงเฉพาะ bookmark */}
+        {/* ปุ่ม bookmark */}
         <button onClick={toggleShowBookmarks} className={styles['toggle-button']}>
           {showOnlyBookmarks ? '📋 แสดงทั้งหมด' : '⭐ เฉพาะเมนูที่ Bookmark'}
         </button>
@@ -91,12 +84,15 @@ export default function HomePage() {
           ➕ เพิ่มเมนูใหม่
         </Link>
 
+        {/* รายชื่อเมนู */}
         <ul className={styles['recipe-list']}>
           {filteredRecipes.map((recipe) => (
             <li key={recipe._id || recipe.id} className={styles['recipe-card']}>
               <h3>{recipe.title}</h3>
               {recipe.image && <img src={recipe.image} alt={recipe.title} />}
+
               <p>{recipe.description}</p>
+
               <div className={styles['recipe-actions']}>
                 <Link href={`/recipes/${recipe.id}`}>🔍 ดูเพิ่มเติม</Link>
                 <button onClick={() => handleDelete(recipe.id)}>🗑️ ลบ</button>
