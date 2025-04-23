@@ -120,3 +120,43 @@
     text-align: center;
   }
   
+  .timer-section {
+    margin: 20px 0;
+    text-align: center;
+  }
+   
+  .timer-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+   
+  .timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+   
+  .timer-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+   
+  .timer-button:hover {
+    background-color: #218838;
+  }
+   
+  .timer-button.reset {
+    background-color: #dc3545;
+  }
+   
+  .timer-button.reset:hover {
+    background-color: #c82333;
+  }
